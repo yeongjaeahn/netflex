@@ -7,6 +7,7 @@ import movieTrailer from 'movie-trailer';
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState('');
+
   const base_URL = 'https://image.tmdb.org/t/p/original/';
 
   useEffect(() => {

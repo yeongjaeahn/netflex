@@ -2,6 +2,9 @@
   margin-left: 20px;
   color: white;
 }
+.row h2 {
+  margin-top: 10px;
+}
 .row_posters {
   display: flex;
   overflow-y: hidden;
@@ -9,7 +12,17 @@
   padding: 20px;
 }
 .row_posters::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
+  height: 8px;
+}
+.row_posters::-webkit-scrollbar-thumb {
+  width: 5px; /* 스크롤바의 길이 */
+  background: rgb(49, 49, 49); /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+.row_posters::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); /*스크롤바 뒷 배경 색상*/
 }
 
 .row_poster {
