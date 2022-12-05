@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .row {
   margin-left: 20px;
   color: white;
@@ -22,11 +25,16 @@
 }
 .row_poster:hover {
   transform: scale(1.08);
+  /* border: 3px solid white; */
+
+  outline: 3px solid white;
 }
 
 .row_posterLarge {
   max-height: 27rem;
   transition: transform 450ms;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .row_posterLarge:hover {
   transform: scale(1.09);

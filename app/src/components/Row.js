@@ -15,9 +15,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
         `https://api.themoviedb.org/3/${fetchUrl}`
       );
       //https://api.themoviedb.org/3/
-      console.log(request.data.results);
+
       setMovies(request.data.results);
-      console.table(movies);
+
       return request;
     }
     fetchData();
@@ -40,13 +40,12 @@ function Row({ title, fetchUrl, isLargeRow }) {
       )
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
-          console.log('url', urlParams);
+
           setTrailerUrl(urlParams.get('v'));
         })
 
         .catch((error) => console.log(error));
     }
-    console.log('trailerurl', trailerUrl);
   };
   return (
     <div className="row">
