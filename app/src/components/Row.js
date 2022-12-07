@@ -7,6 +7,7 @@ import movieTrailer from 'movie-trailer';
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState('');
+  const [show, setShow] = useState(false);
 
   const base_URL = 'https://image.tmdb.org/t/p/original/';
 
@@ -36,6 +37,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     if (trailerUrl) {
       setTrailerUrl('');
     } else {
+      setShow(true);
       movieTrailer(
         movie?.name || '' || movie.name || toString(movie?.original_name)
       )
@@ -46,6 +48,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
         })
 
         .catch((error) => console.log(error));
+      if (!!movieTrailer === show) {
+        setShow(false);
+      }
     }
   };
   return (
@@ -69,6 +74,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
         })}
       </div>
       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      {show && <YouTube opts={opts} />}
     </div>
   );
 }
